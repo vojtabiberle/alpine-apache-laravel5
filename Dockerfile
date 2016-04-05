@@ -18,9 +18,9 @@ RUN apk --update add \
   php-ctype \
   php-zlib \
   php-iconv \
-  php-xdebug@testing
+  php-xdebug@testing \
+  ca-certificates
 
-ADD essentials.ini /etc/php/conf.d/essentials.ini
 RUN sed -i "s/extension/zend_extension/g" /etc/php/conf.d/xdebug.ini 
 
 RUN sed -i "s/\/var\/www\/localhost\/htdocs/\/var\/www\/localhost\/public/g" /etc/apache2/httpd.conf && \
